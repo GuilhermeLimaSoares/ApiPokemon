@@ -1,0 +1,23 @@
+<div style="width: 100%; border: 2px solid">
+  <p class="text-center" style="margin: 0">Lista de Pokemons</p>
+  <table class="table table-border">
+    <thead>
+      <tr class="text-center">
+        <td>Nome</td>
+        <td>Detalhes</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" *ngFor="let pokemon of pokemonsList">
+        <td style="padding: 1px; vertical-align: middle">{{ pokemon.name }}</td>
+        <td style="padding: 1px"><button class="btn-primary" (click)="getPokemonDetail(pokemon.url)">Ver Detalhes</button></td>
+      </tr>
+      <!-- <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize"(click)="gogo()" (click)="getNumeroPagina()" (paginaAtual)="onMudouPagina($event)" ></pagination>  -->
+      <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" (pageChanged)=getNumeroPagina($event)></pagination> 
+      <!-- <app-pokemon-home [paginaAtual3]=""></app-pokemon-home> -->
+      <!-- <p>Teste: {{bigTotalItems}}</p>
+      <p>Teste2: {{ paginaAtual3 }}</p> -->
+      
+    </tbody>
+  </table>
+</div>

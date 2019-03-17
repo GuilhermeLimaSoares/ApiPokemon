@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<div class="bg-light" style="margin: 5px; display: inline-flex; width: -webkit-fill-available">
+<app-pokemon-list style="width: 40%" [pokemonsList]="pokemonsList" (detailUrl)="getPokemonDetail($event)" [bigTotalItems]="bigTotalItems2" (paginaAtual)="onMudouPagina($event)" [paginaAtual3]="paginaAtual2" ></app-pokemon-list>
+<app-pokemon-detail style="width: 60%" [pokemonDetail]="pokemonDetail"></app-pokemon-detail>
+
+</div>
+ <!-- <p>pao: {{bigTotalItems2}}</p>  -->
+<!-- <p>Pagina number: {{ paginaNumber }}</p> -->
+<!-- <p>Pagininha2: {{paginaAtual2}}</p> -->

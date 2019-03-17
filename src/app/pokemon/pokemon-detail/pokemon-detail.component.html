@@ -1,0 +1,66 @@
+<div style="margin-left: 5px; border: 2px solid; height: 100%; display: flex" class="text-center">
+  <p *ngIf="pokemonDetail == undefined" style="margin:auto; font-size: 35px">
+    Pokemon ainda não selecionado!
+  </p>
+  <div *ngIf="pokemonDetail != undefined" style="width: 100%;">
+    <div class="row" style="display: flex; align-items: center; height: 50%; margin: 0">
+      <div class="col-md-4" style="font-size: 30px">
+        {{ pokemonDetail.name }}
+      </div>
+      <div class="col-md-4">
+        <img [src]="pokemonDetail.sprites.front_default" alt="not-found" height="250px" width="250px">
+      </div>
+      <div class="col-md-4">
+        <img [src]="pokemonDetail.sprites.back_default" alt="not-found" height="250px" width="250px">
+      </div>
+    </div>
+    <div class="row" style="display: flex; align-items: center; margin: 0">
+      <div class="col-md-5 text-center">
+        <div>Informações</div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Altura</td>
+              <td> {{ (pokemonDetail.height / 10) }} m </td>
+            </tr>
+            <tr>
+              <td>Peso</td>
+              <td> {{ (pokemonDetail.weight / 10) }} kg </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-7 text-center">
+        <div>Atributos</div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Velocidade</td>
+              <td> {{ (pokemonDetail.stats[0].base_stat) }} </td>
+            </tr>
+            <tr>
+              <td>Defesa-Especial</td>
+              <td> {{ (pokemonDetail.stats[1].base_stat) }} </td>
+            </tr>
+            <tr>
+              <td>Ataque-Especial</td>
+              <td> {{ (pokemonDetail.stats[2].base_stat) }} </td>
+            </tr>
+            <tr>
+              <td>Defesa</td>
+              <td> {{ (pokemonDetail.stats[3].base_stat) }} </td>
+            </tr>
+            <tr>
+              <td>Ataque</td>
+              <td> {{ (pokemonDetail.stats[4].base_stat) }} </td>
+            </tr>
+            <tr>
+              <td>Vida</td>
+              <td> {{ (pokemonDetail.stats[5].base_stat) }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
